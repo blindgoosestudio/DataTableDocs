@@ -20,9 +20,9 @@ Simple plugin which allows managing data in spreadsheet style within Unity. View
 - Multiple Windows - Open multiple Data Table assets simultaneously.
 
 ## **Guide**
-
-1. **Create Table Row**:
-	-  Navigate to `Assets > Create > Scripting > Data Table > Table Row`:
+- Depedency Require: com.unity.nuget.newtonsoft-json version 3.2.1
+- **Create Table Row**:
+	-  Navigate to `Assets > Create > Scripting > Data Table > Table Row`:   
 ```c#
 	using System;
 	using UnityEngine;
@@ -58,10 +58,10 @@ Simple plugin which allows managing data in spreadsheet style within Unity. View
 	}
 ```
 
-2. Create Data Table:
+- Create Data Table:
 	- Select structure use by Data Table<br/>
 	 !["Data Table Schema Picker Window"](images/data_table_picker_window.png)
-3. Open Data Table Editor:
+- Open Data Table Editor:
 	- Double click the Data Table asset to open Data Table Editor\n
 	 !["Data Table Editor Window"](images/data_table_editor_window.png)
 	 !["Data Table View Context Menu"](images/context_menu_editor_window.png)
