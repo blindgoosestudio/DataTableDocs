@@ -1,4 +1,4 @@
-!(Data Table Logo)[images/d_data_table_icon.png]
+!["Data Table Logo"](images/d_data_table_icon.png)
 
 ## Table Contents
 - [Overview](#overview)
