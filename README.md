@@ -101,7 +101,3 @@ Simple plugin which allows managing data in spreadsheet style within Unity. View
 ## **Known Limitations**
 - **Collection fields** - A collections(Array or List) nested inside another collections, since it can't be serialize by unity
 - **Asset Deletion** - When asset is deleted it will close any opened editor window that has asset
-
-- Remove Data Table's SetRowInteral and introduce setter to Row property (Editor Only).
-- Added Data Table event when reset happens, which allows editor window to respond. (Editor Only).
-- Change Editor Window of Data Table now support multiple editor window open as long as its not the same asset being edited.
