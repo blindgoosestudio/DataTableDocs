@@ -20,7 +20,7 @@ Simple plugin which allows managing data in spreadsheet style within Unity. View
 - Multiple Windows - Open multiple Data Table assets simultaneously.
 
 ## **Guide**
-- Depedency Require: com.unity.nuget.newtonsoft-json version 3.2.1
+- Dependency Require: com.unity.nuget.newtonsoft-json version 3.2.1
 - **Create Table Row**:
 	-  Navigate to `Assets > Create > Scripting > Data Table > Table Row`:   
 ```c#
