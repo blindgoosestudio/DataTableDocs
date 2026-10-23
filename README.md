@@ -3,6 +3,7 @@
 ## Table Contents
 - [Overview](#overview)
 - [Features](#features)
+- [Installation](#installation)
 - [Guide](#guide)
 - [Reference](#reference)
 - [Known Limitations](#known-limitations)
@@ -19,8 +20,21 @@ Simple plugin which allows managing data in spreadsheet style within Unity. View
 - Reordering - Seamlessly reposition row of data through drag and drop or context menu
 - Multiple Windows - Open multiple Data Table assets simultaneously.
 
+## **Installation**
+
+### **Requirements**
+- Unity 2022.3 or later
+- Unity package `com.unity.nuget.newtonsoft-json`
+
+### **Install Dependency**
+1. Open `Window > Package Manager`.
+2. Click `+` then `Add package by name`.
+3. Enter `com.unity.nuget.newtonsoft-json`.
+4. Click `Add` and wait for installation to complete.
+5. Import `DataTable` unity package if you haven't done so.
+
 ## **Guide**
-- Dependency Require: com.unity.nuget.newtonsoft-json version 3.2.1
+Before continuing, make sure you've completed the [Installation](#installation) steps.
 - **Create Table Row**:
 	-  Navigate to `Assets > Create > Scripting > Data Table > Table Row`:   
 ```c#
