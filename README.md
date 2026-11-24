@@ -107,6 +107,10 @@ Before continuing, make sure you've completed the [Installation](#installation) 
 2. Double-click the asset to open Data Table Editor.<br/>
  !["Data Table Editor Window"](images/data_table_editor_window.png)
 
+> **Editor location:** Data Table adds no toolbar menu or tab. Create tables from
+> `Assets > Create > Data Table`, then double-click the asset to open its editor, the same way
+> Unity's Input Actions asset works. Export is available from the asset's right-click menu.
+
 > Only one Data Table Editor window can edit a particular Data Table asset at a time. Opening an asset that
 > is already being edited will focus its existing editor window. Different Data Table assets can be opened in
 > separate windows.
