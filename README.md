@@ -143,7 +143,7 @@ You can change th order of rows by dragging and dropping handle of row within Ta
 ### **Searching and Filtering**
 Use the search field to find specific rows in your Data Table.
 
-You caan also use field-based expressions to filter rows according to their values.
+You can also use field-based expressions to filter rows according to their values.
 
 Examples:
 ```text
@@ -246,7 +246,7 @@ public class ItemDatabase : MonoBehaviour
 `GetRow<T>()` validate itss type if matches its assigned row type then returns the row that matches with row name when it exists, otherwise returns `null`
 
 #### **Finding Rows**
-You caan also use `FindRows<T>()` to get rows that match a specified condition.
+You can also use `FindRows<T>()` to get rows that match a specified condition.
 
 For example, to find all consumable items:
 ```csharp
