@@ -9,7 +9,7 @@
 	- [Create Table Row](#create-table-row)
 	- [Create Data Table Asset](#create-data-table-asset)
 	- [Open Data Table Editor](#open-data-table-editor)
- 	- [When a Row Type is Missing](#when-a-row-type-is-missing) 
+ 	- [When a Data Table Is Reset](#when-a-data-table-is-reset) 
 	- [Using the Data Table Editor](#using-the-data-table-editor)
 	- [Saving Changes](#saving-changes)
 	- [Working With Data](#working-with-data)
@@ -124,14 +124,18 @@ Before continuing, make sure you've completed the [Installation](#installation) 
 > is already being edited will focus its existing editor window. Different Data Table assets can be opened in
 > separate windows.
 
-### **When a Row Type Is Missing**
-If a Data Table's row type can no longer be found (for example, the `TableRow` class was
-renamed, moved, or deleted), opening the table shows a reset prompt:
+### **When a Data Table Is Reset**
+Resetting a Data Table from the Inspector (the **⋮** menu > **Reset**) clears its row type and
+all of its rows. The next time its editor window is shown, it displays a prompt:
 
-- **Keep backup of asset**: creates a copy of the table as a backup, then asks you to
+- **Keep backup of asset**: saves a copy of the table as a new asset, then asks you to
   choose a new row type.
-- **Accept Asset Reset**: skips the backup and asks you to choose a new row type.
-- **Cancel**: closes the window and leaves the asset untouched.
+- **Accept Asset Reset**: continues without a backup and asks you to choose a new row type.
+- **Close**: closes the window. The reset has already been applied, so the table stays empty
+  with no row type until you open it again and choose one.
+
+> **Tip:** If you reset a table by accident, press `Ctrl + Z` to undo it, or use
+> **Keep backup of asset** to keep a copy of the original.
 
 ![Data Table asset Reset](images/data_table_editor_window_reset.png)
 
