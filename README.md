@@ -213,17 +213,17 @@ public class ItemDatabase : MonoBehaviour
     [SerializeField]
     private DataTable itemTable;
 
-    public ItemsRow GetItem(string rowName)
+    public ItemRow GetItem(string rowName)
     {
         if (itemTable == null)
             return null;
 
-        return itemTable.GetRow<ItemsRow>(rowName);
+        return itemTable.GetRow<ItemRow>(rowName);
     }
 
     private void Start()
     {
-        ItemsRow healthPotion = GetItem("health_potion");
+        ItemRow healthPotion = GetItem("health_potion");
 
         if (healthPotion == null)
         {
@@ -250,7 +250,7 @@ You can also use `FindRows<T>()` to get rows that match a specified condition.
 
 For example, to find all consumable items:
 ```csharp
-var consumables = itemTable.FindRows<ItemsRow>(
+var consumables = itemTable.FindRows<ItemRow>(
     item => item.type == ItemType.Consumable
 );
 ```
