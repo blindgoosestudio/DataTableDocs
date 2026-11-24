@@ -143,7 +143,7 @@ You can change th order of rows by dragging and dropping handle of row within Ta
 ### **Searching and Filtering**
 Use the search field to find specific rows in your Data Table.
 
-You caan alsso use field-based expressions to filter rows according to their values.
+You caan also use field-based expressions to filter rows according to their values.
 
 Examples:
 ```text
