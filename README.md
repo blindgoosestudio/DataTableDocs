@@ -9,6 +9,7 @@
 	- [Create Table Row](#create-table-row)
 	- [Create Data Table Asset](#create-data-table-asset)
 	- [Open Data Table Editor](#open-data-table-editor)
+ 	- [When a Row Type is Missing](#when-a-row-type-is-missing) 
 	- [Using the Data Table Editor](#using-the-data-table-editor)
 	- [Saving Changes](#saving-changes)
 	- [Working With Data](#working-with-data)
@@ -19,11 +20,19 @@
 - [Known Limitations](#known-limitations)
 
 ## **Overview**
-**Data Table** is a data management tool for Unity that allows you to define custom data structures using C# and manage rows through a spreadsheet-style Editor Window.<br/>
-Each Data Table uses a user-defined `TableRow` type to determine the structure of its rows. You can also configure default field values that are used when creating new rows.<br/>
-The custom Editor Window provides an intuitive interface for creating, editing, duplicating, deleting, and reordering rows. It also includes searching, filtering, sorting, multi-row editing, and copy/paste operations with data validation.<br/>
+**Data Table** stores structured game data, such as items, enemies, recipes, and abilities, in a
+single asset. Define a row type in C#, edit rows in a spreadsheet-style editor, and look rows up
+by name or by condition at runtime. There are no per-row assets to manage.
 
-Data Table supports importing and exporting data in CSV and JSON formats and integrates with Unity's Undo system. Multiple Data Table assets can be opened and managed independently through their own editor windows. At runtime, your game scripts can reference Data Table assets to retrieve individual record by row name or find multiple datas using custom conditions. This makes Data Table useful for managing structured game data such as items, characters, equipment, abilities, and other gameplay-related information.
+- **One asset per table.** Each Data Table holds its own row type (schema) and every row of data.
+- **Typed rows.** Rows are plain C# classes, so you get Unity's standard fields, enums,
+  sprites, and attributes, plus compile-time access in code.
+- **Built for editing.** Undo/redo, multi-row editing, copy/paste with validation, search and
+  field-based filters, sorting, drag-and-drop reordering, and CSV/JSON import and export.
+- **Independent windows.** Open as many tables as you like, each in its own editor window.
+
+Data Table adds no toolbar menu: create a table from `Assets > Create > Data Table` and
+double-click it to open the editor.
 
 ## **Features**
 - Undo Support - Seamlessly integrated with Unity's Undo System which allows to revert changes.
@@ -114,6 +123,17 @@ Before continuing, make sure you've completed the [Installation](#installation) 
 > Only one Data Table Editor window can edit a particular Data Table asset at a time. Opening an asset that
 > is already being edited will focus its existing editor window. Different Data Table assets can be opened in
 > separate windows.
+
+### **When a Row Type Is Missing**
+If a Data Table's row type can no longer be found (for example, the `TableRow` class was
+renamed, moved, or deleted), opening the table shows a reset prompt:
+
+- **Keep backup of asset**: creates a copy of the table as a backup, then asks you to
+  choose a new row type.
+- **Accept Asset Reset**: skips the backup and asks you to choose a new row type.
+- **Cancel**: closes the window and leaves the asset untouched.
+
+![Data Table asset Reset](images/data_table_editor_window_reset.png)
 
 ### **Using the Data Table Editor**
 The Data Table Editor provides a spreadsheet-style interface for viewomg and managing data in you Data Table asset.<br/>
