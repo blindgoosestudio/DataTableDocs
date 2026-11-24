@@ -4,6 +4,7 @@
 - [Overview](#overview)
 - [Features](#features)
 - [Installation](#installation)
+- [How Data Table works](#how-data-table-works)
 - [Guide](#guide)
 	- [Create Table Row](#create-table-row)
 	- [Create Data Table Asset](#create-data-table-asset)
@@ -46,10 +47,16 @@ Data Table supports importing and exporting data in CSV and JSON formats and int
 4. Click `Add` and wait for installation to complete.
 5. Import `DataTable` unity package if you haven't done so.
 
+## **How Data Table works**
+1. **Define a row structure**. Create `TableRow` script (`Asset > Create > Scripting > Data Table > Table Row`).
+2. **Create a data table**. Use `Asset > Create > Data Table` and pick your row type. The asset stores instance of the type as its schema and default values.
+3. **Edit rows**. Double-click the asset to add and edit rows in the spreadsheet-style editor. Each new row starts from schemas default value.
+4. **Read rows in code**. Reference the table from any script and look rows up by name or by condition.
+
 ## **Guide**
 Before continuing, make sure you've completed the [Installation](#installation) steps.
 ### **Create Table Row**:
--  Navigate to `Assets > Create > Scripting > Data Table > Table Row`:   
+-  Navigate to `Asset > Create > Scripting > Data Table > Table Row`:   
 ```c#
 	using System;
 	using UnityEngine;
@@ -86,7 +93,7 @@ Before continuing, make sure you've completed the [Installation](#installation) 
 ```
 
 ### **Create Data Table Asset**
-1. Navigate to `Assets > Create > Data Table`.
+1. Navigate to `Asset > Create > Data Table`.
 2. After creating asset, the `Select Table Row` window appears.<br/>
 !["Data Table Schema Picker Window"](images/data_table_picker_window.png)
 3. Choose the `TableRow` type you created earlier.<br/>
