@@ -16,6 +16,7 @@
 	- [Searching & Filtering](#searching-and-filtering)
 	- [Import & Export](#importing-and-exporting)
 	- [Accessing Data at Runtime](#accessing-data-at-runtime)
+    - [Referencing Rows in Other Tables](#referencing-rows-in-other-tables)
 - [Reference](#reference)
 - [Known Limitations](#known-limitations)
 
@@ -256,6 +257,41 @@ Data Table assets can be referenced from your game scripts and used to retrieve 
 
 Assign your Data Table asset to a serialized field, then use `GetRow<T>()` to retrieve a row by its row name.
 
+### **Referencing Rows in Other Tables**
+A `DataTableRowHandle` field lets a row point at a row in another Data Table, for example a weapon
+that points at its entry in an items table.
+
+```csharp
+[Serializable]
+public class WeaponRow : TableRow
+{
+    public DataTableRowHandle weapon;
+    public WeaponType weaponType;
+    public int damage;
+    [Min(1)]
+    public int level;
+}
+```
+
+In the Row Editor, expand the field, then choose the **Table** and pick the **Row Name** from the dropdown.
+
+![Row Handle field](images/row_handle_field.png)
+
+A handle stores the row's id, not its name. If you rename the row in the target table, the handle
+updates with it and the link keeps working.
+
+To read the linked row in code, check the handle first:
+
+```csharp
+WeaponRow sword = weaponTable.GetRow<WeaponRow>("rusty_sword");
+
+if (sword.weapon.IsValid())
+{
+    ItemRow item = sword.weapon.GetRow<ItemRow>();
+    Debug.Log(item.name);
+}
+```
+
 #### **Retrieving a Row**
 For example, using the `ItemRow` class created earlier:
 
@@ -313,8 +349,10 @@ This is useful when you need a list of rows that match a condition, instead of a
 
 ## **Reference**
 ### **Data Table Row Handle**
-- `GetRow()` or `GetRow<T>()` - Returns the Table Row.
-- `IsValid()` - Returns true if the table is not null and the row name is not empty or null.
+- `GetRow()` or `GetRow<T>()` - Returns the row the handle points to.
+- `IsValid()` - Returns true if the handle's table is assigned, a row is selected, and that row
+  still exists in the table. Returns false if the table is missing, no row is selected, or the
+  row has been deleted.
 
 ### **Data Table**
 - `this[string rowName]` - Indexer for getting a row by its row name.
